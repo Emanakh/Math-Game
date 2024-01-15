@@ -90,9 +90,15 @@ namespace Math_Game
             int levelRange = Level();
             Random random = new Random();
             int score = 0;
-
             Console.WriteLine("enter number of rounds you want:");
             int rounds = int.Parse(Console.ReadLine());
+
+            while (rounds <= 0)
+            {
+
+                Console.WriteLine("enter number of rounds you want:");
+                rounds = int.Parse(Console.ReadLine());
+            }
 
             stopwatch.Start();
 
@@ -158,6 +164,13 @@ namespace Math_Game
             Console.WriteLine("enter number of rounds you want:");
             int rounds = int.Parse(Console.ReadLine());
 
+            while (rounds <= 0)
+            {
+
+                Console.WriteLine("enter number of rounds you want:");
+                rounds = int.Parse(Console.ReadLine());
+            }
+
             stopwatch.Start();
 
             for (int i = 0; i < rounds; i++)
@@ -168,7 +181,11 @@ namespace Math_Game
                 var numTwo = random.Next(1, levelRange);
 
                 Console.WriteLine($"{numOne} - {numTwo}");
+
+
                 Console.WriteLine("Enter your nswer");
+
+
                 string answer = Console.ReadLine();
 
                 int result;
